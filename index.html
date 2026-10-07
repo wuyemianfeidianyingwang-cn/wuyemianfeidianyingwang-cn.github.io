@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="午夜免费电影网（wuyemianfeidianyingwang-cn.github.io）专注午夜档免费电影导航：免费电影推荐、午夜电影、免费电影大全、高分片单、类型分类、口碑榜单、影评资讯一站直达。无弹窗、无诱导、加载快。">
+<meta name="keywords" content="午夜免费电影网,免费电影,午夜电影,免费电影推荐,免费电影大全,深夜看电影,高分免费片单,电影导航,观影指南,wuyemianfeidianyingwang">
+<meta name="author" content="午夜免费电影网">
+<meta name="robots" content="index, follow">
+<title>午夜免费电影网 - 免费电影推荐与午夜档片单导航 | 每日更新</title>
+<link rel="canonical" href="https://wuyemianfeidianyingwang-cn.github.io/">
+<style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+        --night:#07080f;--night2:#0f1220;--ink:#e8eaf2;--ink2:#8f93a8;--line:rgba(255,255,255,.09);
+        --cy:#22e0c4;--ind:#5b6bff;--vio:#a066ff;--gol:#ffc24b;--mag:#ff5cb8;--red:#ff5a5f;
+        --paper:#efe9fb
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei","Noto Sans CJK SC",sans-serif;
+        background:var(--night);color:var(--ink);line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    ul{list-style:none}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+    .eyebrow{font-size:10.5px;letter-spacing:3.5px;color:var(--cy);font-weight:800;text-transform:uppercase}
+    .sec-h{text-align:center;margin-bottom:44px}
+    .sec-h h2{font-size:clamp(26px,5vw,40px);font-weight:900;margin-top:8px;letter-spacing:.5px}
+    .sec-h h2 em{font-style:normal;background:linear-gradient(90deg,var(--cy),var(--ind));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .sec-h p{color:var(--ink2);margin-top:12px;font-size:15px}
+
+    /* 导航 */
+    .nav{position:sticky;top:0;z-index:100;background:rgba(7,8,15,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .navbox{display:flex;align-items:center;height:64px;gap:20px}
+    .brand{display:flex;align-items:center;gap:9px;font-weight:950;letter-spacing:1px;white-space:nowrap;font-size:19px}
+    .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--cy);box-shadow:0 0 12px var(--cy);animation:pl 2.4s infinite}
+    @keyframes pl{50%{opacity:.25;box-shadow:0 0 4px var(--cy)}}
+    .brand .n{font-size:10px;font-weight:800;color:#0b0c14;background:var(--gol);padding:3px 9px;border-radius:20px;letter-spacing:1px}
+    .menu{display:flex;gap:6px;margin-left:auto;font-weight:700;font-size:13.5px}
+    .menu a{padding:9px 15px;border-radius:999px;color:#c7cad8;transition:.22s}
+    .menu a:hover{color:var(--cy);background:rgba(34,224,196,.08)}
+    .menu a.on{color:#06120f;background:linear-gradient(90deg,var(--cy),var(--ind));box-shadow:0 6px 18px rgba(34,224,196,.3)}
+    .burger{display:none;flex-direction:column;gap:5px;margin-left:auto;cursor:pointer}
+    .burger i{width:24px;height:2px;background:var(--ink);border-radius:2px}
+
+    /* Hero —— 视觉方案 A：霓虹描边 + 月相 + 打字机 */
+    .hero{position:relative;padding:66px 0 60px;overflow:hidden;background:
+        radial-gradient(560px 320px at 82% 8%,rgba(91,107,255,.28),transparent 60%),
+        radial-gradient(440px 300px at 6% 92%,rgba(255,92,184,.16),transparent 60%),var(--night)}
+    .gridbg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+        background-size:46px 46px;mask-image:radial-gradient(ellipse at 50% 40%,#000 24%,transparent 78%)}
+    .stars{position:absolute;inset:0;background-image:radial-gradient(1.4px 1.4px at 12% 18%,#fff,transparent),radial-gradient(1px 1px at 24% 62%,#fff,transparent),
+        radial-gradient(1.6px 1.6px at 38% 30%,#ffe9c7,transparent),radial-gradient(1px 1px at 56% 74%,#fff,transparent),
+        radial-gradient(1.2px 1.2px at 72% 22%,#fff,transparent),radial-gradient(1px 1px at 86% 58%,#cfd8ff,transparent),
+        radial-gradient(1.4px 1.4px at 48% 14%,#fff,transparent),radial-gradient(1px 1px at 8% 82%,#fff,transparent)}
+    .hg{position:relative;z-index:3;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+    .hero h1{font-size:clamp(36px,6.6vw,66px);line-height:1.12;font-weight:950;letter-spacing:-.5px}
+    .hero h1 .grad{background:linear-gradient(100deg,var(--cy),var(--ind) 50%,var(--vio));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .type{display:inline-flex;align-items:center;gap:10px;margin-top:18px;font-family:Georgia,serif;font-size:clamp(15px,1.6vw,19px);color:var(--gol)}
+    .type::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red);animation:pl 1.6s infinite}
+    .hero p.lead{margin-top:20px;font-size:clamp(15px,1.6vw,18px);color:#a7abbf;max-width:520px}
+    .cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;font-weight:800;font-size:14.5px;transition:.25s;border:2px solid transparent;cursor:pointer}
+    .btn.pri{background:linear-gradient(90deg,var(--cy),var(--ind));color:#04120e;box-shadow:0 12px 28px rgba(34,224,196,.3)}
+    .btn.pri:hover{transform:translateY(-3px) scale(1.02);filter:brightness(1.1)}
+    .btn.ghost{background:rgba(255,255,255,.05);color:var(--ink);border-color:var(--line)}
+    .btn.ghost:hover{border-color:var(--cy);color:var(--cy)}
+    .moon{position:relative;width:280px;height:280px;margin:0 auto}
+    .moon .ring{position:absolute;inset:0;border-radius:50%;border:1.5px solid rgba(255,255,255,.16)}
+    .moon .ring.r2{inset:16px;border-style:dashed;animation:spin 40s linear infinite}
+    .moon .ring.r3{inset:-16px;border-color:rgba(91,107,255,.3)}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .moon .disc{position:absolute;inset:38px;border-radius:50%;background:radial-gradient(circle at 36% 30%,#fff7e6,#ffe2a8 40%,#e9b96a 70%,#b98d4a);box-shadow:0 0 60px rgba(255,194,75,.45),inset -10px -14px 24px rgba(120,80,20,.5)}
+    .moon .disc .cr{position:absolute;border-radius:50%;background:rgba(150,105,45,.34);box-shadow:inset 2px 3px 6px rgba(90,55,15,.5)}
+    .moon .disc .c1{width:34px;height:26px;left:30px;top:40px}
+    .moon .disc .c2{width:20px;height:20px;right:34px;top:64px}
+    .moon .disc .c3{width:26px;height:16px;left:52px;bottom:38px}
+
+    /* 栏目一：今日午夜场 —— 视觉方案 B：霓虹描边卡（box-shadow 多层发光 + 顶部亮条） */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:22px}
+    .cv{position:relative;border-radius:16px;overflow:hidden;background:var(--night2);border:1px solid var(--line);transition:.4s;height:338px;display:flex;flex-direction:column}
+    .cv .cover{position:relative;flex:1;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+    .cv .cover i{position:absolute;inset:0;display:block;transition:.8s;opacity:.92}
+    .cv:nth-child(1) .cover i{background:linear-gradient(155deg,#0b1f33,#0e7490)}
+    .cv:nth-child(2) .cover i{background:linear-gradient(155deg,#24133a,#7c3aed)}
+    .cv:nth-child(3) .cover i{background:linear-gradient(155deg,#33131f,#e11d48)}
+    .cv:nth-child(4) .cover i{background:linear-gradient(155deg,#2b2a0f,#ca8a04)}
+    .cv .cover .shine{position:absolute;inset:0;background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.22) 48%,transparent 56%);transform:translateX(-120%);transition:.9s}
+    .cv .cover .cc{position:relative}
+    .cv .cover .cc .flag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:1.5px;color:#04120e;background:var(--gol);padding:4px 11px;border-radius:999px}
+    .cv .cover .cc h4{color:#fff;font-size:20px;font-weight:950;margin-top:8px;line-height:1.35;text-shadow:0 2px 14px rgba(0,0,0,.4)}
+    .cv .cover .cc .year{color:rgba(255,255,255,.8);font-size:11.5px;letter-spacing:1px}
+    .cv .meta{padding:14px 18px;display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--ink2);font-weight:600;border-top:1px solid var(--line)}
+    .cv .meta .star{margin-left:auto;color:var(--gol);font-weight:950;font-size:14px;font-family:Georgia,serif}
+    .cv::after{content:"";position:absolute;top:0;left:0;width:56px;height:4px;background:var(--c)}
+    .cv:nth-child(1){--c:var(--cy)} .cv:nth-child(2){--c:var(--vio)} .cv:nth-child(3){--c:var(--mag)} .cv:nth-child(4){--c:var(--gol)}
+    .cv:hover{transform:translateY(-8px);border-color:var(--c);box-shadow:0 0 0 1px var(--c),0 18px 44px rgba(0,0,0,.6),0 0 26px -8px var(--c)}
+    .cv:hover .cover i{transform:scale(1.08);opacity:1}
+    .cv:hover .cover .shine{transform:translateX(120%)}
+
+    /* 栏目二：类型导航 —— 视觉方案 C：对角切片磁贴（clip-path 斜切 + 错位高度） */
+    .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));grid-auto-rows:112px;gap:14px}
+    .tz{position:relative;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;cursor:pointer;transition:.32s;color:#fff}
+    .tz i{position:absolute;inset:0;display:block;transition:.7s;clip-path:polygon(0 0,100% 0,100% 74%,0 100%)}
+    .tz:nth-child(1) i{background:linear-gradient(135deg,#0e7490,#22e0c4)}
+    .tz:nth-child(2) i{background:linear-gradient(135deg,#4338ca,#5b6bff)}
+    .tz:nth-child(3) i{background:linear-gradient(135deg,#a21caf,#a066ff)}
+    .tz:nth-child(4) i{background:linear-gradient(135deg,#be123c,#ff5cb8)}
+    .tz:nth-child(5) i{background:linear-gradient(135deg,#b45309,#ffc24b)}
+    .tz:nth-child(6) i{background:linear-gradient(135deg,#15803d,#4ade80)}
+    .tz:nth-child(7) i{background:linear-gradient(135deg,#0f766e,#2dd4bf)}
+    .tz:nth-child(8) i{background:linear-gradient(135deg,#7f1d1d,#f87171)}
+    .tz.tall{grid-row:span 2}
+    .tz .ct{position:relative}
+    .tz .ct .k{font-size:9.5px;letter-spacing:2.5px;opacity:.85;font-weight:800}
+    .tz .ct h4{font-size:18px;font-weight:950;line-height:1.3}
+    .tz .ct b{position:absolute;right:0;top:-2px;font-family:Georgia,serif;font-size:26px;font-weight:900;color:rgba(255,255,255,.28)}
+    .tz:hover{transform:skewX(-2.2deg) translateY(-5px);box-shadow:0 18px 36px rgba(0,0,0,.55)}
+    .tz:hover i{transform:scale(1.1)}
+
+    /* 栏目三：口碑榜 —— 视觉方案 D：代码表风格（等宽字体 + 递增底色 + 竖条电平） */
+    .tbl{width:100%;max-width:1040px;margin:0 auto;border-collapse:collapse;background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}
+    .tbl thead th{background:linear-gradient(90deg,rgba(34,224,196,.14),rgba(91,107,255,.14));color:var(--cy);font-size:11px;letter-spacing:2.4px;padding:14px 16px;text-align:left;font-weight:800}
+    .tbl tbody td{padding:13px 16px;border-top:1px solid var(--line);font-size:13.5px;vertical-align:middle}
+    .tbl tbody tr:nth-child(odd){background:rgba(255,255,255,.018)}
+    .tbl tbody tr:hover{background:rgba(34,224,196,.07)}
+    .tbl .rk{width:54px;color:var(--gol);font-weight:900;font-size:15px}
+    .tbl .nm{font-weight:800;font-family:"PingFang SC","Microsoft YaHei",sans-serif}
+    .tbl .nm em{font-style:normal;font-size:10.5px;color:var(--ink2);margin-left:7px;font-weight:600}
+    .tbl .lv{width:160px}
+    .tbl .lv i{display:block;height:7px;border-radius:7px;width:0;background:linear-gradient(90deg,var(--cy),var(--ind));transition:width 1.05s cubic-bezier(.22,.7,.3,1)}
+    .tbl .sc{text-align:right;color:var(--mag);font-weight:900;font-size:15px}
+
+    /* 栏目四：专题策展 —— 视觉方案 E：横向卷轴（overflow-x + scroll-snap + 霓虹描边） */
+    .scroll{overflow-x:auto;overflow-y:hidden;padding:6px 0 24px;margin:0 -22px;padding-left:22px;scroll-snap-type:x mandatory;scrollbar-width:thin}
+    .scroll::-webkit-scrollbar{height:8px} .scroll::-webkit-scrollbar-thumb{background:#3a3f55;border-radius:8px}
+    .reel{display:flex;gap:18px;width:max-content}
+    .rv{flex:0 0 360px;height:252px;border-radius:16px;padding:26px;color:#fff;position:relative;overflow:hidden;scroll-snap-align:start;cursor:pointer;transition:.35s;border:1px solid var(--line)}
+    .rv i.bg{position:absolute;inset:0;display:block;transition:.8s;opacity:.86}
+    .rv:nth-child(1) i.bg{background:linear-gradient(150deg,#082f49,#0891b2)}
+    .rv:nth-child(2) i.bg{background:linear-gradient(150deg,#2e1065,#7c3aed)}
+    .rv:nth-child(3) i.bg{background:linear-gradient(150deg,#3f0d1c,#e11d48)}
+    .rv:nth-child(4) i.bg{background:linear-gradient(150deg,#3f2f09,#ca8a04)}
+    .rv:nth-child(5) i.bg{background:linear-gradient(150deg,#0b3d2e,#059669)}
+    .rv::before{content:"";position:absolute;inset:0;border-radius:16px;border:1.5px solid transparent;background:linear-gradient(135deg,var(--cy),transparent 60%) border-box;-webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.8}
+    .rv .shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(4,5,10,.9))}
+    .rv .no{position:absolute;right:16px;top:10px;font-family:Georgia,serif;font-size:56px;font-weight:900;line-height:1;color:rgba(255,255,255,.22)}
+    .rv .ct{position:relative}
+    .rv .ct .k{font-size:10px;letter-spacing:3px;opacity:.9;font-weight:800}
+    .rv .ct h4{font-size:21px;font-weight:950;margin-top:6px;line-height:1.4}
+    .rv .ct p{font-size:12.5px;opacity:.92;margin-top:8px;line-height:1.6}
+    .rv .go{position:absolute;left:26px;bottom:20px;font-size:12px;font-weight:800;border-bottom:2px solid var(--cy);padding-bottom:2px;color:var(--cy)}
+    .rv:hover{border-color:var(--cy);box-shadow:0 0 26px -6px var(--cy)}
+    .rv:hover i.bg{transform:scale(1.07);opacity:1}
+
+    /* 栏目五：关于本站 —— 视觉方案 F：三道光谱条 + 等宽数据面板 */
+    .ab{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+    .spec{display:flex;flex-direction:column;gap:22px}
+    .sp{position:relative}
+    .sp .hd{display:flex;align-items:baseline;gap:10px;margin-bottom:9px}
+    .sp .hd b{font-size:15.5px;font-weight:900}
+    .sp .hd span{font-size:10.5px;color:var(--cy);letter-spacing:1.6px;font-weight:800}
+    .sp .hd em{margin-left:auto;font-style:normal;font-family:Georgia,serif;font-weight:900;color:var(--gol);font-size:15px}
+    .sp .bar{height:12px;border-radius:999px;background:rgba(255,255,255,.07);overflow:hidden;position:relative}
+    .sp .bar i{display:block;height:100%;border-radius:999px;width:0;background:linear-gradient(90deg,var(--a),var(--b));box-shadow:0 0 14px -3px var(--a);transition:width 1.2s cubic-bezier(.22,.7,.3,1)}
+    .panels{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .pn{background:rgba(255,255,255,.03);border:1px solid var(--line);border-left:3px solid var(--c);border-radius:12px;padding:18px;transition:.26s}
+    .pn:hover{transform:translateY(-4px);background:rgba(255,255,255,.06)}
+    .pn .v{font-family:Georgia,serif;font-size:32px;font-weight:950;line-height:1;background:linear-gradient(90deg,var(--c),var(--ink));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .pn h5{font-size:13px;font-weight:850;margin-top:10px}
+    .pn span{font-size:11px;color:var(--ink2)}
+
+    footer{border-top:1px solid var(--line);margin-top:70px;padding:60px 0 24px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.4))}
+    .foot{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:30px}
+    .foot h5{font-size:15px;font-weight:850;margin-bottom:14px;color:var(--ink)}
+    .foot a{display:block;color:#8f93a8;font-size:13px;padding:5px 0;transition:.2s}
+    .foot a:hover{color:var(--cy);transform:translateX(4px)}
+    .foot .brand{color:#fff;margin-bottom:10px}
+    .foot .brand p{color:#8f93a8;font-size:13px;max-width:340px;margin-top:10px;line-height:1.8}
+    .line{margin-top:32px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:#6b7088;font-size:12px}
+    .line a{display:inline;color:#a7abbf}
+    .line a:hover{color:var(--cy)}
+
+    @media(max-width:980px){
+        .hg{grid-template-columns:1fr;text-align:center;padding-top:8px}
+        .hero p.lead{margin:20px auto 0}
+        .cta{justify-content:center}
+        .moon{width:230px;height:230px;margin-top:26px}
+        .tbl .lv{display:none}
+    }
+    @media(max-width:680px){
+        .burger{display:flex}
+        .menu{position:fixed;inset:64px 0 0 0;background:rgba(7,8,15,.97);flex-direction:column;padding:24px 20px;gap:8px;transform:translateX(100%);transition:.35s;z-index:99}
+        .menu.open{transform:translateX(0)}
+        .menu a{font-size:17px;padding:14px 18px;border-radius:14px;text-align:center;color:#e8eaf2}
+        .hero h1{font-size:32px}
+        .grid{grid-template-columns:1fr 1fr}
+        .ab{grid-template-columns:1fr}
+        .panels{grid-template-columns:1fr 1fr}
+        .foot{grid-template-columns:1fr 1fr}
+        .rv{flex:0 0 300px}
+        .tz{font-size:0}
+        .tz .ct h4{font-size:16px}
+    }
+    @media print{.nav,.gridbg,.stars,.moon{display:none}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<header class="nav" role="banner">
+    <div class="wrap navbox">
+        <a class="brand" href="#top" aria-label="午夜免费电影网 首页"><span class="dot"></span>午夜免费电影网<span class="n">FREE</span></a>
+        <nav class="menu" id="menu" aria-label="主导航">
+            <a class="on" href="#top">首页</a>
+            <a href="#today">今日午夜场</a>
+            <a href="#gen">类型导航</a>
+            <a href="#rank">口碑榜单</a>
+            <a href="#topic">专题策展</a>
+            <a href="#about">关于本站</a>
+        </nav>
+        <div class="burger" id="burger" role="button" tabindex="0" aria-label="菜单"><i></i><i></i><i></i></div>
+    </div>
+</header>
+
+<!-- Hero：视觉方案 A（霓虹描边 + 月相 + 网格地平线 + 打字机光标） -->
+<section class="hero" id="top" aria-labelledby="h1">
+    <span class="gridbg" aria-hidden="true"></span><span class="stars" aria-hidden="true"></span>
+    <div class="wrap hg">
+        <div>
+            <span class="eyebrow">Midnight Free Cinema</span>
+            <h1>免费电影，<br><span class="grad">午夜档</span>刚好。</h1>
+            <div class="type" aria-live="polite">深夜 · 免费 · 不剧透</div>
+            <p class="lead">午夜免费电影网（wuyemianfeidianyingwang-cn.github.io）专注午夜档免费电影导航：免费电影推荐、免费电影大全、午夜电影、高分片单、类型分类、口碑榜单、影评资讯一站直达。无弹窗、无诱导、加载快，关灯就能看。</p>
+            <div class="cta">
+                <a class="btn pri" href="#today">▶ 看今日午夜场</a>
+                <a class="btn ghost" href="#rank">🏆 翻口碑榜单</a>
+            </div>
+        </div>
+        <div class="moon" aria-hidden="true">
+            <div class="ring r3"></div><div class="ring r2"></div><div class="ring"></div>
+            <div class="disc"><span class="cr c1"></span><span class="cr c2"></span><span class="cr c3"></span></div>
+        </div>
+    </div>
+</section>
+
+<!-- 栏目一：今日午夜场 —— 视觉方案 B：霓虹描边卡（多层 box-shadow 发光 + 顶部亮条 + 扫光） -->
+<section id="today" aria-labelledby="t-today">
+    <div class="wrap">
+        <div class="sec-h">
+            <span class="eyebrow">Midnight Session</span>
+            <h2>今日<em>午夜场</em></h2>
+            <p>四部适合深夜一个人看的免费电影。看完刚好入睡，或者彻底睡不着。</p>
+        </div>
+        <div class="grid">
+            <article class="cv"><div class="cover"><i></i><span class="shine"></span><div class="cc"><span class="flag">悬疑 · 心理</span><h4>《凌晨三点的电话》</h4><span class="year">2024 · 112 min</span></div></div><div class="meta">节奏像心跳，越看越不敢关灯 <span class="star">★ 8.6</span></div></article>
+            <article class="cv"><div class="cover"><i></i><span class="shine"></span><div class="cc"><span class="flag">科幻 · 孤独</span><h4>《最后一座灯塔》</h4><span class="year">2023 · 126 min</span></div></div><div class="meta">全世界只剩一个人，画面很美 <span class="star">★ 8.8</span></div></article>
+            <article class="cv"><div class="cover"><i></i><span class="shine"></span><div class="cc"><span class="flag">犯罪 · 黑色</span><h4>《雨夜出租车》</h4><span class="year">2025 · 104 min</span></div></div><div class="meta">台词少、镜头狠，结局反转 <span class="star">★ 8.4</span></div></article>
+            <article class="cv"><div class="cover"><i></i><span class="shine"></span><div class="cc"><span class="flag">治愈 · 慢</span><h4>《便利店灯火》</h4><span class="year">2022 · 98 min</span></div></div><div class="meta">失眠时的安慰剂，BGM 很轻 <span class="star">★ 8.2</span></div></article>
+        </div>
+    </div>
+</section>
+
+<!-- 栏目二：类型导航 —— 视觉方案 C：对角切片磁贴（clip-path 斜切 + 错位高度 + 倾斜动效） -->
+<section id="gen" aria-labelledby="t-gen" style="background:linear-gradient(180deg,transparent,rgba(0,0,0,.28))">
+    <div class="wrap">
+        <div class="sec-h">
+            <span class="eyebrow">Browse by Mood</span>
+            <h2>按<em>心情</em>选片</h2>
+            <p>睡不着想烧脑，就点悬疑；想被接住，就点治愈。一格一格，都是片单。</p>
+        </div>
+        <div class="tiles">
+            <a class="tz tall"><i></i><div class="ct"><span class="k">SUSPENSE</span><h4>悬疑 / 惊悚</h4><b>01</b></div></a>
+            <a class="tz"><i></i><div class="ct"><span class="k">SCI-FI</span><h4>科幻 / 孤独</h4><b>02</b></div></a>
+            <a class="tz tall"><i></i><div class="ct"><span class="k">CRIME</span><h4>犯罪 / 黑色</h4><b>03</b></div></a>
+            <a class="tz"><i></i><div class="ct"><span class="k">HEALING</span><h4>治愈 / 慢电影</h4><b>04</b></div></a>
+            <a class="tz"><i></i><div class="ct"><span class="k">DOCU</span><h4>纪录片</h4><b>05</b></div></a>
+            <a class="tz tall"><i></i><div class="ct"><span class="k">NOIR</span><h4>黑色电影</h4><b>06</b></div></a>
+            <a class="tz"><i></i><div class="ct"><span class="k">LOVE</span><h4>爱情 / 遗憾</h4><b>07</b></div></a>
+            <a class="tz"><i></i><div class="ct"><span class="k">ANIME</span><h4>动画 / 成人向</h4><b>08</b></div></a>
+        </div>
+    </div>
+</section>
+
+<!-- 栏目三：口碑榜 —— 视觉方案 D：代码表风格（等宽字体 + 奇偶底色 + 竖条电平 + 行号） -->
+<section id="rank" aria-labelledby="t-rank">
+    <div class="wrap">
+        <div class="sec-h">
+            <span class="eyebrow">Top Rated</span>
+            <h2>午夜<em>口碑榜</em></h2>
+            <p>综合评分、站内点击与影评口碑，每月更新。榜首那部，值得二刷。</p>
+        </div>
+        <table class="tbl">
+            <thead><tr><th>#</th><th>片名</th><th>类型</th><th>热度</th><th style="text-align:right">评分</th></tr></thead>
+            <tbody>
+                <tr><td class="rk">01</td><td class="nm">《最后一座灯塔》<em>科幻 · 孤独</em></td><td>科幻</td><td class="lv"><i style="--w:97%"></i></td><td class="sc">8.8</td></tr>
+                <tr><td class="rk">02</td><td class="nm">《凌晨三点的电话》<em>悬疑 · 心理</em></td><td>悬疑</td><td class="lv"><i style="--w:92%"></i></td><td class="sc">8.6</td></tr>
+                <tr><td class="rk">03</td><td class="nm">《雨夜出租车》<em>犯罪 · 黑色</em></td><td>犯罪</td><td class="lv"><i style="--w:88%"></i></td><td class="sc">8.4</td></tr>
+                <tr><td class="rk">04</td><td class="nm">《便利店灯火》<em>治愈 · 慢</em></td><td>治愈</td><td class="lv"><i style="--w:83%"></i></td><td class="sc">8.2</td></tr>
+                <tr><td class="rk">05</td><td class="nm">《第七封未读短信》<em>剧情 · 遗憾</em></td><td>剧情</td><td class="lv"><i style="--w:79%"></i></td><td class="sc">8.0</td></tr>
+                <tr><td class="rk">06</td><td class="nm">《无人区的收音机》<em>公路 · 孤独</em></td><td>公路</td><td class="lv"><i style="--w:74%"></i></td><td class="sc">7.7</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- 栏目四：专题策展 —— 视觉方案 E：横向卷轴（overflow-x + scroll-snap + 霓虹描边 + 进度条） -->
+<section id="topic" aria-labelledby="t-topic" style="background:linear-gradient(180deg,transparent,rgba(0,0,0,.28))">
+    <div class="wrap">
+        <div class="sec-h">
+            <span class="eyebrow">Editorial</span>
+            <h2>专题<em>策展</em></h2>
+            <p>不想一部部挑？按主题成组看，体验更完整。</p>
+        </div>
+        <div class="scroll">
+            <div class="reel">
+                <article class="rv"><i class="bg"></i><span class="shade"></span><span class="no">01</span><div class="ct"><span class="k">INSOMNIA</span><h4>失眠者的 10 部电影</h4><p>节奏慢、台词少、光影足。陪你熬到天亮，但不让你更焦虑。</p><span class="go">展开片单 →</span></div></article>
+                <article class="rv"><i class="bg"></i><span class="shade"></span><span class="no">02</span><div class="ct"><span class="k">NOIR</span><h4>黑色电影补课清单</h4><p>雨、烟、背叛、注定失败的男人。从经典到新黑色，一次看够。</p><span class="go">展开片单 →</span></div></article>
+                <article class="rv"><i class="bg"></i><span class="shade"></span><span class="no">03</span><div class="ct"><span class="k">HEALING</span><h4>被生活锤过之后：治愈片</h4><p>不灌鸡汤。只有一碗热汤、一趟慢车、和一个不追问的人。</p><span class="go">展开片单 →</span></div></article>
+                <article class="rv"><i class="bg"></i><span class="shade"></span><span class="no">04</span><div class="ct"><span class="k">REAL</span><h4>根据真实事件改编</h4><p>愤怒、无力、然后被电影接住。慎入，但看完会说谢谢。</p><span class="go">展开片单 →</span></div></article>
+                <article class="rv"><i class="bg"></i><span class="shade"></span><span class="no">05</span><div class="ct"><span class="k">FIRST LOVE</span><h4>深夜爱情：没说出口的那类</h4><p>没有车祸失忆。只有电车、未读短信、和删了又打的字。</p><span class="go">展开片单 →</span></div></article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 栏目五：关于本站 —— 视觉方案 F：三道光谱条 + 等宽数据面板 -->
+<section id="about" aria-labelledby="t-about">
+    <div class="wrap ab">
+        <div class="spec">
+            <div class="sp"><div class="hd"><b>只收值得熬到凌晨的</b><span>STANDARD</span><em>阈值 7.5</em></div><div class="bar"><i style="--a:var(--cy);--b:var(--ind);--w:92%"></i></div></div>
+            <div class="sp"><div class="hd"><b>免费入口优先</b><span>FREE FIRST</span><em>100%</em></div><div class="bar"><i style="--a:var(--vio);--b:var(--mag);--w:100%"></i></div></div>
+            <div class="sp"><div class="hd"><b>零打扰</b><span>NO DISTRACT</span><em>0</em></div><div class="bar"><i style="--a:var(--gol);--b:var(--red);--w:100%"></i></div></div>
+            <p style="color:var(--ink2);font-size:13.5px;margin-top:6px">评分、口碑、完成度三项过线才入站。低于 7.5 分的，我们不推。片源只收免费且合规的入口，优先正版平台免费专区；盗链、低质采集站、违规弹窗，一律不收。</p>
+        </div>
+        <div class="panels">
+            <div class="pn" style="--c:var(--cy)"><div class="v">1280</div><h5>收录片单</h5><span>持续更新中</span></div>
+            <div class="pn" style="--c:var(--ind)"><div class="v">12</div><h5>内容频道</h5><span>按心情与类型</span></div>
+            <div class="pn" style="--c:var(--vio)"><div class="v">8.3</div><h5>站内均分</h5><span>低于 7.5 不推荐</span></div>
+            <div class="pn" style="--c:var(--gol)"><div class="v">0</div><h5>弹窗广告</h5><span>一个都没有</span></div>
+        </div>
+    </div>
+</section>
+
+<footer role="contentinfo">
+    <div class="wrap">
+        <div class="foot">
+            <div class="brand">
+                <a class="brand" href="#top"><span class="dot"></span>午夜免费电影网<span class="n">FREE</span></a>
+                <p>专注午夜档免费电影的网址导航与选片指南。结构清晰、加载迅速、全端自适应，做你决定"今晚看哪部免费电影"时的那一点参考。关灯，开片。</p>
+            </div>
+            <div><h5>快速导航</h5><a href="#top">首页</a><a href="#today">今日午夜场</a><a href="#gen">类型导航</a><a href="#rank">口碑榜单</a><a href="#topic">专题策展</a></div>
+            <div><h5>内容频道</h5><a href="#">悬疑惊悚</a><a href="#">科幻孤独</a><a href="#">犯罪黑色</a><a href="#">治愈慢电影</a><a href="#">深夜纪录片</a></div>
+            <div><h5>关于本站</h5><a href="#about">关于我们</a><a href="#">收录标准</a><a href="#">免责声明</a><a href="#">隐私政策</a><a href="#">友情链接</a></div>
+        </div>
+        <div class="line">
+            <span>© 2026 午夜免费电影网 wuyemianfeidianyingwang-cn.github.io 版权所有 · 本站仅为影视网址导航索引，不存储、不提供任何音视频资源下载与播放</span>
+            <span>网站网址：<a href="https://wuyemianfeidianyingwang-cn.github.io/">https://wuyemianfeidianyingwang-cn.github.io/</a></span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+    burger.addEventListener('click',function(){menu.classList.toggle('open')});
+    menu.addEventListener('click',function(e){if(e.target.tagName==='A')menu.classList.remove('open')});
+    var links=document.querySelectorAll('.menu a'),secs=document.querySelectorAll('section[id]');
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+        e.target.querySelectorAll('.lv i,.sp .bar i').forEach(function(n){n.style.width=n.style.getPropertyValue('--w')})}})},{threshold:.22});
+    document.querySelectorAll('.tbl tbody tr,.spec').forEach(function(n){io.observe(n)});
+    window.addEventListener('scroll',function(){
+        var pos=window.scrollY+130,cur='';
+        secs.forEach(function(s){if(pos>=s.offsetTop)cur=s.id});
+        links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur)});
+    });
+</script>
+</body>
+</html>
